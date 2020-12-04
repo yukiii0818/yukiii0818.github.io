@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+    <link type="text/css" rel="stylesheet" href="gpa.css">
+    <script src="https://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="./images/logo.png" alt="">
+    </div>
+    <div class="name">
+        <p>Paper Airplanes University</p>
+    </div>
+    <div class="search">
+        <div class="details">
+            <img src="./images/home.png" alt=""> &nbsp; | Contact Us &nbsp;
+            <input type="text" placeholder="Search">
+        </div>
+        <nav class="nav">
+            <a href="./index.html">HOME</a>
+            <a href="./computer.html">Computer Science</a>
+            <a href="./teaching.html">Teaching Assistant Application</a>
+            <a href="./gpa.html"> GPA Calculation</a>
+        </nav>
+    </div>
+</header>
+<hr>
+
+
+<div class="container">
+    <form id="form">
+        <h2>GPA Calculation</h2>&nbsp;
+        <h4 style="text-align: justify">NOTE: You needs to enter Credits and Letter Grade for at least two courses.</h4>
+        <div class="input">
+            <p style="text-align: justify">Please enter Credits & Letter Grade with the following format:</p>
+            <p style="text-align: justify">The Credits and Letter Grade should be separated by ","  &  Each groups should be separated by";".</p> 
+            <p>Example: If you enter 2,A;2,B; you will get 3.5</p>
+            <textarea  id="hours">
+            </textarea>
+        </div>
+        <div class="tools">
+            <div id="btn" class="btn">submit</div>
+            <div class="GPA">
+                <span>your GPA is: </span>
+                <span id="GPA"></span>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+
+<footer class="footer">
+    <p> © 2020 Sun Yuqi All Right Reserved.</p>
+    <p> Tel: +86 13397228848   Contact us</p>
+</footer>
+<script>
+
+    $('#btn').click(()=>{
+        let values = $("#hours").val();
+        if(values){
+            let value = values.trim().split(";");
+            let arr = value.filter(i=>i.length>0);
+
+            let newarr = arr.map(i=>{
+                let num = parseInt(i.split(",")[0], 10);
+                let str = i.split(",")[1];
+                return [num, str]
+                }
+            );
+            console.log(calculateAvGPA(...newarr));
+            $("#GPA").html(calculateAvGPA(...newarr))
+        }
+    })
+
+
+    function calculateAvGPA(...reset){
+        const  inputs = reset;
+        let sumGrade = 0,
+            sumHours = 0;
+        inputs.forEach(i => {
+            sumGrade += i[0] * getGrade(i[1]);
+            sumHours += i[0]
+        });
+        return (sumGrade/sumHours).toFixed(2);
+    }
+
+    function getGrade(Letter){
+        switch (Letter) {
+            case 'A':
+                return 4;
+                break;
+            case 'B':
+                return 3;
+                break;
+            case 'C':
+                return 2;
+                break;
+            case 'D':
+                return 1;
+                break;
+            case 'F':
+                return 0;
+                break;
+            default:
+        }
+    }
+</script>
+</body>
+</html>

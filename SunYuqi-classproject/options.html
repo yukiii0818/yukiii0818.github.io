@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="./images/logo.png" alt="">
+    </div>
+    <div class="name">
+        <p>Paper Airplanes University</p>
+    </div>
+    <div class="search">
+        <div class="details">
+            <img src="./images/home.png" alt=""> &nbsp; | Contact Us &nbsp;
+            <input type="text" placeholder="Search">
+        </div>
+        <nav class="nav">
+            <a href="./index.html">HOME</a>
+            <a href="./computer.html">Computer Science</a>
+            <a href="./teaching.html">Teaching Assistant Application</a>
+            <a href="./gpa.html"> GPA Calculation</a>
+        </nav>
+    </div>
+</header>
+<hr>
+    
+<div class="container">
+    <div class="left">
+        <div class="list">
+            <h2>The Latest NEWS</h2> 
+            <img src="./images/news1.jpg" alt="" style="margin-left:25%">
+            <p>Units in the school: According to the needs of the prevention and control of the new crown pneumonia epidemic, the school decided to adjust some of the New Year's Day holidays in 2021 to the winter vacation. The specific arrangements are as follows.</p>
+            <p>On January 1, 2021 (Friday), New Year's Day will be closed for one day, and on January 2 and 3 (Saturday and Sunday), final exams and work will start. Winter vacation will start on January 7 (Thursday).</p>
+        </div> &nbsp;
+        <div>
+            <img src="images/notice.jpg" alt="" width=360px height=220px style="margin-left:21%"> 
+            <p>Departments of the school: In response to the notice from the power dispatching control center of the power supply company, the power taken from the east area of our school was changed from substation A to substation B on November 14. The east area needs to be powered off. </p>
+            <p>The specific power outage time: November 14th 1:00-4:00, November 17th 1:00-2:00, please overcome and understand.</p>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="news">
+            <h2>Student Activities</h2>
+            <p>For freshmen to enroll, choosing a club naturally becomes a crucial matter. Just as the community attracts new students, the new students also draw the attention of the community. This year, our school’s new recruitment is unique. The 61 student associations on the Wupo Cultural Factory have gathered here in response to the call of the Association of Associations. Group battle" is a good show.</p>
+        </div>
+        <div class="news">
+            <h3>Chinese Opera Association</h3>
+            <p>"Fighting the national quintessence, talk about the millennium again", here are the singing voices of all walks of life, and there are flowing water sleeve dances. A song "Farewell My Concubine" and a cheongsam show, especially the vivid character reverse series, is fascinating.</p>
+        </div>
+        <div class="news">
+            <h3>Cycling Association.</h3>
+            <p>Use a bicycle to climb the stairs, ride a bicycle over the human body, and perform tricks. The thrilling actions and superb skills made the audience breathless and their eyes widened.</p>
+        </div>
+        <div class="news">
+            <h3>Kongfu Association</h3>
+            <p>On heroes by martial arts, wonderful plum blossom fist, octochi fist with both strength and softness, and fluent nunchakus, Chen style Taiji fist with yin and yang harmony, Wushu Association and Taekwondo Association took turns. Won the battle. There were bursts of applause and cheers from the audience.</p>
+        </div>
+        <div class="news">
+            <h3>Folk Music Association</h3>
+            <p>An elegant melody flows from the ocarina, an empty voice echoes across the campus, with a touch of sadness, and the poignant pictures of "City in the Sky" continue to emerge, making people look forward to infinitely.</p>
+        </div>
+        <div class="news">
+            <h3>Basketball Club</h3>
+            <p>The basketball club won the third place in the national college basketball competition last year. Its strength should not be underestimated. Students who like basketball can join the basketball club to communicate with fellow basketball players and make progress together.</p>
+        </div>
+        <div class="news">
+            <h3>Chess Association</h3>
+            <p>The chess club won the second place in the national college basketball competition last year. There are many fans in the club who love and are good at chess. At the same time, it was rated as the most worthy club in the school. Students who like chess can join the chess club, communicate with other chess lovers and make progress together.</p>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <p> © 2020 Sun Yuqi All Right Reserved.</p>
+    <p> Tel: +86 13397228848   Contact us</p>
+</footer>
+<script>
+    console.log(calculateAvGPA([2,'A'], [4, 'B']));
+
+    function calculateAvGPA(...reset){
+        const  inputs = reset;
+        let sumGrade = 0,
+            sumHours = 0;
+        inputs.forEach(i => {
+            sumGrade += i[0] * getGrade(i[1]);
+            sumHours += i[0]
+        });
+        return (sumGrade/sumHours).toFixed(2);
+    }
+
+    function getGrade(Letter){
+        switch (Letter) {
+            case 'A':
+                return 4;
+                break;
+            case 'B':
+                return 3;
+                break;
+            case 'C':
+                return 2;
+                break;
+            case 'D':
+                return 1;
+                break;
+            case 'F':
+                return 0;
+                break;
+            default:
+        }
+    }
+</script>
+</body>
+</html>

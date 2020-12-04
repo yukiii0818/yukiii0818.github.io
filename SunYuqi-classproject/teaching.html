@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="teaching.css">
+    <script src="https://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="logo">
+        <img src="./images/logo.png" alt="">
+    </div>
+    <div class="name">
+        <p>Paper Airplanes University</p>
+    </div>
+    <div class="search">
+        <div class="details">
+            <img src="./images/home.png" alt=""> &nbsp; | Contact Us &nbsp;
+            <input type="text" placeholder="Search">
+        </div>
+        <nav class="nav">
+            <a href="./index.html">HOME</a>
+            <a href="./computer.html">Computer Science</a>
+            <a href="./teaching.html">Teaching Assistant Application</a>
+            <a href="./gpa.html"> GPA Calculation</a>
+        </nav>
+    </div>
+</header>
+<hr>
+<div class="container">
+    <form id="form">
+        <h2>LOGIN</h2>
+        <div class="input">
+            <label for="username">username: </label>
+            <input type="text" id="username" placeholder="admin" value="admin">
+        </div>
+        <div class="input">
+            <label for="password">password: </label>
+            <input type="password" id="password" value="root" placeholder="******">
+        </div>
+
+        <div class="input">
+            <div id="btn" class="btn">submit</div>
+        </div>
+
+    </form>
+    <table border="1" align="center" id="infos">
+        <tr>
+            <th colspan="6">
+                Student Information</th>
+        </tr>
+        <tr>
+            <th>name</th>
+            <th>ID</th>
+            <th>Gender</th>
+            <th>GPA</th>
+            <th>Submission Date</th>
+            <th>Comments</th>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>17080379</td>
+            <td>Female</td>
+            <td>3.48</td>
+            <td>2020-12-04</td>
+            <td>Good</td>
+        </tr>
+    </table>
+</div>
+
+
+<footer class="footer">
+    <p> © 2020 Sun Yuqi All Right Reserved.</p>
+    <p> Tel: +86 13397228848   Contact us</p>
+</footer>
+
+<script>
+    $("#btn").click(()=>{
+        const user = $("#username").val();
+        const password = $("#password").val();
+        console.log(user, password);
+        if(user === 'admin'&& password === 'root'){
+            alert("login success");
+            $("#form").hide();
+            $("#infos").show();
+        }else  {
+            alert("please entry correct username or password!")
+        }
+    })
+</script>
+
+</body>
+</html>

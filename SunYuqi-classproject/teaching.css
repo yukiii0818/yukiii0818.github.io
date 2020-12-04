@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Source Han Sans CN;
+    overflow: hidden;
+}
+
+body {
+    margin: 20px;
+}
+
+html, body {
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin-bottom: 20px;
+}
+.name{
+    font-size:60px;
+    font-family:"Times New Roman", Times, serif;
+}
+.nav>a{
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.nav>a:hover {
+    color: #8592c5;
+}
+
+.details {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.footer p{
+    font-size: 12px;
+    text-align: center;
+}
+
+
+#form {
+    width: 400px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.input>input {
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    padding: 0 10px;
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.input {
+    font-size: 20px;
+    margin: 20px 0;
+}
+.btn {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    background: white linear-gradient(180deg, #ffffff 0%, #f3f3f3 100%);
+}
+
+#infos {
+    display: none;
+    margin: 100px auto;
+}
